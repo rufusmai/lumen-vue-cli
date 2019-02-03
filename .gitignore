@@ -1,0 +1,17 @@
+vendor/
+node_modules/
+/tests/unit/coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+Homestead.json
+Homestead.yaml
+.env
+
+.DS_Store
+/.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
