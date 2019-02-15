@@ -1,7 +1,7 @@
 {
-  "name": "vue-app",
+  "name": "lumen-vue-app",
   "version": "1.0.0",
-  "description": "A blank Vue.js Project",
+  "description": "The Laravel Lumen Framework as backend API with Vue.js included",
   "author": "Rufus Maiwald <dev@rufusmaiwald.de>",
   "private": true,
   "scripts": {

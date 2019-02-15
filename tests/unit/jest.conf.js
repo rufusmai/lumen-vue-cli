@@ -7,17 +7,17 @@ module.exports = {
     'json',
     'vue'
   ],
+  testEnvironment: 'node',
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/resources/js/vue/src/$1'
   },
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
-  setupFiles: ['<rootDir>/test/unit/setup'],
-  mapCoverage: true,
-  coverageDirectory: '<rootDir>/test/unit/coverage',
+  setupFiles: ['<rootDir>/tests/unit/setup'],
+  coverageDirectory: '<rootDir>/tests/unit/coverage',
   collectCoverageFrom: [
     'src/**/*.{js,vue}',
     '!src/main.js',
