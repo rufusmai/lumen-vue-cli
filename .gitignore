@@ -1,3 +1,4 @@
+# Package Manager
 vendor/
 node_modules/
 /tests/unit/coverage/
@@ -8,10 +9,19 @@ Homestead.json
 Homestead.yaml
 .env
 
+# IDEs
 .DS_Store
-/.idea
+.idea/
 .vscode
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
+.settings/
+.classpath
+.project
+nbproject/
+nbactions.xml
+
+# Deployment
+public/
