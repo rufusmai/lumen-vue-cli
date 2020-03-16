@@ -1,6 +1,6 @@
-# lumen-vue-app
+# lumen-vue-cli
 
-This project is a basic lumen 5.8 app that contains a built in vue.js app (built with vue-cli 3.7.0).
+This project is a basic lumen 7 app that contains a built in vue.js app (built using vue-cli 4.2.3).
 
 Use the `./routes/web.php` to add more php backend sites. All other traffic will be redirected to the vue app.
 
