@@ -1,41 +1,55 @@
 # lumen-vue-cli
 
-This project is a basic lumen 7 app that contains a built in vue.js app (built using vue-cli 4.2.3).
+Want to use lumen but all the advantages of vue-cli even with hot reloading?
+Here you go! A lumen scaffolding with built-in vue-cli.
 
-Use the `./routes/web.php` to add more php backend sites. All other traffic will be redirected to the vue app.
+This project is a basic lumen `8.0` app,
+created using the [laravel/lumen](https://github.com/laravel/lumen) scaffolding.
+On top Vue 3 is installed using vue-cli-service `~4.5.0` with `babel`, `eslint`, `vue-router` and `vue-axios`.
 
-### Important directory changes
+## Install
 
-Vue files are located in `./resources/js/vue`
+Please verify the requirements for [lumen 8](https://lumen.laravel.com/docs/8.x/installation#installation)
+and [vue-cli](https://lumen.laravel.com/docs/8.x/installation#installation) first.
 
-The "public" folder from vue is located in `./resources/static`. All static assets will be moved to the `./public` folder after `npm run build`
+Install via composer:
+```
+composer create-project --prefer-dist rufusmaiwald/lumen-vue-cli site
+```
+*`site` is the dir name where the new project will be created in.*
 
-### Project setup
+After installation download all npm dependencies:
 ```
 npm install
-composer install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve (Vue.js development server)
-php -S localhost:8000 -t public (PHP development server)
-```
+## Getting Started
 
-### Compiles and minifies for production
-```
-npm run build
-```
+#### Source files
+The typical vue-cli `src` directory was just moved to `./resources/js/vue`. So you can just use it as usual.
+Assets in `./resources/js/vue/assets` will be automatically resolved with `@/asset.img`.
 
-### Run your tests
-```
-npm run test
-```
+#### Static files
+As vue-cli is now building your compiled source code and assets in your `./public` directory,
+dont put files in there.
+All static files that you want to have in the `./public` directory are copied over
+from `./resources/static` on running `npm run build`.
+*You might remember this behaviour from the vue-cli `static` folder.*
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### Build application
+Using `npm run build` your vue-app will be compiled in the public folder and all static files will be copied over.
+Thats it! Your app is ready to be served from `./public`.
 
-### Customize Vue configuration
+#### Development
+lumen-vue-cli uses the vue devServer proxy to allow all backend routes
+to be available from the frontend **only** via XHR/fetch requests.
+Learn more about devServer proxy [here](composer create-project --prefer-dist laravel/lumen blog).
+Just run `php artisan serve` and `npm run serve` and voila, your app should be up on `https://localhost:8080`.
+
+#### Views
+`./resources/js/vue/index.html` will be copied on build to `./resources/views/app.blade.php`.
+Just include the template in your route to return your vue app.
+
+
+### Customize Vue-Cli configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
