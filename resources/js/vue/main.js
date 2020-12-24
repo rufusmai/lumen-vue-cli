@@ -1,10 +1,8 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
-Vue.config.productionTip = false
+createApp(App).use(router).use(VueAxios, axios).mount('#app')
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
