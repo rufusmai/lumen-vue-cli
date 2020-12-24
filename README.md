@@ -45,6 +45,8 @@ lumen-vue-cli uses the vue devServer proxy to allow all backend routes
 to be available from the frontend **only** via XHR/fetch requests.
 Learn more about devServer proxy [here](composer create-project --prefer-dist laravel/lumen blog).
 Just run `php artisan serve` and `npm run serve` and voila, your app should be up on `https://localhost:8080`.
+> Using the vue-cli devServer, all vue front-end requests get not routed through lumen and associated middlewares.
+> To test this behaviour just build the front-end using `npm run build` and run the lumen app using `php artisan serve`
 
 #### Views
 `./resources/js/vue/index.html` will be copied on build to `./resources/views/app.blade.php`.
